@@ -12,3 +12,34 @@ app.get("/", function(request, response){ //root dir
 });
 
 var io = require('socket.io').listen(app.listen(process.env.PORT || port));
+
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
+app.post('/register', function(req, res) {
+    console.log("got post");
+    console.log(req.body.firstname)
+    console.log(req.body.birthday)
+    // ...
+});
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+  // yay!
+});
+
+var memberSchema = mongoose.Schema({
+    fistname: String,
+    lastname: String,
+    grade: int,
+    birthday: String,
+    email: String,
+    studentID: String
+});
