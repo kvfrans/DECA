@@ -23,7 +23,19 @@ app.post('/register', function(req, res) {
     console.log("got post");
     console.log(req.body.firstname)
     console.log(req.body.birthday)
-    // ...
+    var member = new Member({
+    	firstname: req.body.firstname,
+    	lastname: req.body.lastname,
+    	grade: req.body.grade,
+    	birthday: req.body.birthday,
+    	email: req.body.email,
+    	studentID: req.body.studentID
+    })
+    member.save(function (err, member) {
+	  if (err) return console.error(err);
+	  console.log("saved");
+	});
+
 });
 
 var mongoose = require('mongoose');
@@ -36,10 +48,11 @@ db.once('open', function (callback) {
 });
 
 var memberSchema = mongoose.Schema({
-    fistname: String,
+    firstname: String,
     lastname: String,
-    grade: int,
+    grade: Number,
     birthday: String,
     email: String,
     studentID: String
 });
+var Member = mongoose.model('Member', memberSchema);
