@@ -8,6 +8,6 @@ npm install body-parser
 
 run sever with `node server.js`
 
-run mondo with `mondod`
+run mondo with `mongod`
 
 connect to whateverip:8000
