@@ -48,6 +48,12 @@ function submitEmail()
 						                         '<input id="studentid" name="studentid" type="text" placeholder="95012345" class="form-control input-md">'+
 						                    '</div>'+
 						               '</div>'+
+						               '<div class="form-group">'+
+						                    '<label class="col-md-4 control-label" for="password">Password</label>'+
+						                    '<div class="col-md-4">'+
+						                         '<input id="password" name="password" type="password" placeholder="hunter2" class="form-control input-md">'+
+						                    '</div>'+
+						               '</div>'+
 						          '</form>'+
 						     '</div>'+
 						'</div>',
@@ -63,6 +69,7 @@ function submitEmail()
                             posted.grade = $("#grade").val();
                             posted.email = $("#email").val();
                             posted.studentID = $("#studentid").val();
+                            posted.password = $('#password').val();
                             $.ajax({
 							    contentType: 'application/json',
 							    data: JSON.stringify(posted),

@@ -3,6 +3,9 @@ var host = "127.0.0.1";
 var port = 8000;
 var express = require("express");
 
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+
 var app = express();
 //app.use(app.router); //use both root and other routes below
 app.use(express.static(__dirname + "")); //use static files in ROOT/public folder
@@ -29,13 +32,18 @@ app.post('/register', function(req, res) {
     	grade: req.body.grade,
     	birthday: req.body.birthday,
     	email: req.body.email,
-    	studentID: req.body.studentID
+    	studentID: req.body.studentID,
+        password: req.body.password
     })
     member.save(function (err, member) {
 	  if (err) return console.error(err);
 	  console.log("saved");
 	});
+});
 
+app.post('/login', function(req, res) {
+    console.log(req.body.studentID)
+    console.log(req.body.password)
 });
 
 var mongoose = require('mongoose');
@@ -53,6 +61,7 @@ var memberSchema = mongoose.Schema({
     grade: Number,
     birthday: String,
     email: String,
-    studentID: String
+    studentID: String,
+    password: String
 });
 var Member = mongoose.model('Member', memberSchema);
