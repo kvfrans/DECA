@@ -1,67 +1,45 @@
-var fs = require("fs");
-var host = "127.0.0.1";
-var port = 8000;
-var express = require("express");
+// server.js
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-
-var app = express();
-//app.use(app.router); //use both root and other routes below
-app.use(express.static(__dirname + "")); //use static files in ROOT/public folder
-
-app.get("/", function(request, response){ //root dir
-    response.send("Hello!!");
-});
-
-var io = require('socket.io').listen(app.listen(process.env.PORT || port));
-
-var bodyParser = require('body-parser')
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
-
-app.post('/register', function(req, res) {
-    console.log("got post");
-    console.log(req.body.firstname)
-    console.log(req.body.birthday)
-    var member = new Member({
-    	firstname: req.body.firstname,
-    	lastname: req.body.lastname,
-    	grade: req.body.grade,
-    	birthday: req.body.birthday,
-    	email: req.body.email,
-    	studentID: req.body.studentID,
-        password: req.body.password
-    })
-    member.save(function (err, member) {
-	  if (err) return console.error(err);
-	  console.log("saved");
-	});
-});
-
-app.post('/login', function(req, res) {
-    console.log(req.body.studentID)
-    console.log(req.body.password)
-});
-
+// set up ======================================================================
+// get all the tools we need
+var express  = require('express');
+var app      = express();
+var port     = process.env.PORT || 8000;
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var passport = require('passport');
+var flash    = require('connect-flash');
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (callback) {
-  // yay!
+var configDB = require('./config/database.js');
+
+// configuration ===============================================================
+mongoose.connect(configDB.url); // connect to our database
+
+require('./config/passport')(passport); // pass passport for configuration
+
+app.configure(function() {
+
+	// set up our express application
+	app.use(express.logger('dev')); // log every request to the console
+	app.use(express.cookieParser()); // read cookies (needed for auth)
+	app.use(express.bodyParser()); // get information from html forms
+
+	app.set('view engine', 'ejs'); // set up ejs for templating
+
+	// required for passport
+	app.use(express.session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(passport.initialize());
+	app.use(passport.session()); // persistent login sessions
+	app.use(flash()); // use connect-flash for flash messages stored in session
+
+	app.use(express.static('public'));
+
 });
 
-var memberSchema = mongoose.Schema({
-    firstname: String,
-    lastname: String,
-    grade: Number,
-    birthday: String,
-    email: String,
-    studentID: String,
-    password: String
-});
-var Member = mongoose.model('Member', memberSchema);
+
+
+// routes ======================================================================
+require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
+// launch ======================================================================
+app.listen(port);
+console.log('The magic happens on port ' + port);
