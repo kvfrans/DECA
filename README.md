@@ -2,8 +2,7 @@
 
 setup with
 ```
-npm install express
-npm install body-parser
+npm install
 ```
 
 run sever with `node server.js`
