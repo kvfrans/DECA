@@ -53,12 +53,37 @@ module.exports = function(app, passport) {
 		});
 	});
 
+	app.post('/profile', isLoggedIn, function(req, res) {
+		res.render('profile.ejs', {
+			user : req.user // get the user out of session and pass to template
+		});
+	});
+
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
+	});
+
+
+	//register names and stuff
+	app.post('/setinfo', function(req, res)
+	{
+		console.log("got post");
+		console.log(req.user.local.email);
+		console.log(req.body.firstname);
+		req.user.local.firstname = req.body.firstname;
+		req.user.local.lastname = req.body.lastname;
+		req.user.local.grade = req.body.grade;
+		req.user.local.birthday = req.body.birthday;
+		req.user.local.studentID = req.body.studentID;
+		req.user.save(function (err, member) {
+			if (err) return console.error(err);
+			console.log("saved");
+		});
+		res.redirect('/profile');
 	});
 };
 
