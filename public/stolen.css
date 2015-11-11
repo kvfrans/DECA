@@ -1,24 +1,47 @@
-body {
-	padding-top: 50px;
-}
-body.loading {
-	overflow: hidden;
-
-}
-
-body.loading .loadingAnim {
-	display: block;
-}
 
 body {
 	font-family: "Open Sans", sans-serif;
 }
 
-
+h1 {
+	font-weight: 100;
+}
+h4 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 164px;
+	margin-top:30px;
+}
 .navbar{
 	border-bottom: 1px solid #eee;
 	min-height: 40px;
 	background-color: white;
+}
+
+.container {
+	width:100%;
+	margin:0;
+	padding: 0;
+}
+
+.content {
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.btn-custom {
+	border: 1.5px solid white;
+	background-color: transparent;
+	border-radius: initial !important;
+	color: white;
+	margin:5px;
+	position: relative;
+	top:2em;
+}
+.btn-custom:hover, .btn-custom:active {
+	border-color:white;
+	background-color: rgba(221, 221, 221, 0.6);
 }
 
 a {
@@ -28,89 +51,7 @@ a {
 a:hover {
 	color: gray;
 }
-.content {
-	padding: 50px 15px;
-	text-align: center;
-}
 
-@media screen and (min-width: 1200px) {
-	h1.banner{
-		letter-spacing: 145px;
-	}
-	h1.welcomeBanner{
-		letter-spacing: 100px;
-	}
-}
-@media screen and (min-width: 1000px) {
-
-	.modal-dialog {
-		width:900px;
-	}
-}
-
-
-
-h1.banner {
-	font-size: 100px;
-	letter-spacing: 20px;
-}
-
-
-
-#back-2 {
-	float:left;
-}
-
-#back-3 {
-	float:left;
-}
-div.line {
-	border-bottom: 1px solid #eee;
-}
-
-.bfh-selectbox .bfh-selectbox-options {
-
-	margin: -1px 15 0;
-	width: 96%;
-
-}
-.bfh-selectbox .bfh-selectbox-options ul {
-	max-width: 100%
-}
-
-
-
-div.loadingAnim{
-	display:none;
-	position: fixed;
-	z-index: 10000;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba( 255, 255, 255, .8 )
-				url("http://i.imgur.com/3Mn42O6.gif")
-				50% 50%
-				no-repeat;
-}
-a.events {
-	color: blue;
-}
-
-h1.welcomeBanner{
-	font-size: 75px;
-	letter-spacing: 40px;
-}
-#registration-div {
-	padding-top: 10px;
-}
-.modal-body {
-    padding: 15px 15px 0px 15px;
-}
-
-.back {
-	float: left;
-}
 
 #study {
 	border-color:#ddd;
@@ -122,8 +63,23 @@ h1.welcomeBanner{
 }
 
 .wide {
-  width:100%;
-  height:500px;
+  width: 100%;
+  height: 500px;
   background-image:url('bg.jpg');
   background-size:cover;
 }
+
+.welcome {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    color: white;
+    top: 20%;
+    padding: 10px 10px 100px 10px;
+
+
+}
+

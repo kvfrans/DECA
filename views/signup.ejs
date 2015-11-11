@@ -6,7 +6,23 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 	<style>
-		body 		{ padding-top:80px; }
+		body 		{ padding-top:40px;  }
+		.btn-submit {
+			border: 1px solid black;
+			color: black;
+			border-radius: initial !important;
+			background-color: transparent;
+		}
+		.form-control {
+			border: 1px solid black;
+			border-radius: initial !important;
+		}
+
+		.btn:focus, .btn:hover{
+			background-color: rgb(221, 221, 221);
+			border-color: black;
+			color: black;
+		}
 	</style>
 </head>
 <body>
@@ -54,7 +70,7 @@
 		</div>
 		<div class="form-group">
 			<label>Student ID</label>
-			<input type="text" class="form-control" name="studentid">
+			<input type="text" class="form-control" name="studentID">
 		</div>
 		<div class="form-group">
 			<label>Birthday</label>
@@ -68,7 +84,8 @@
 			<label>Parent/Guardian 2 Email</label>
 			<input type="text" class="form-control" name="parent2email">
 		</div>
-		<button type="submit" class="btn btn-warning btn-lg">Signup</button>
+		<button type="submit" class="btn-submit btn btn-warning btn-lg">Signup</button>
+		<button type="submit" class="btn-submit btn btn-warning btn-lg">Signup</button>
 	</form>
 
 	<hr>

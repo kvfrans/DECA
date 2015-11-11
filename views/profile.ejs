@@ -6,7 +6,24 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
+		body 		{ padding-top:40px; word-wrap:break-word; }
+		.form-control {
+			border: 1px solid black;
+			border-radius: initial !important;
+
+		}
+
+		.btn-submit { 
+			border: 1px solid black;
+			color: black;
+			border-radius: initial !important;
+			background-color: transparent;
+		}
+		.btn-submit:hover, .btn-submit:focus {
+			border-color: black;
+			background-color: rgb(221, 221, 221);
+			color: black;
+		}
 	</style>
 </head>
 <body>
@@ -22,11 +39,9 @@
 		<!-- LOCAL INFORMATION -->
 		<div class="col-sm-6">
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
+				<h3><span class="fa fa-user"></span>Updates!</h3>
 
-				Hey its kevin
-				<br><br>
-				Welcome to deca
+				Welcome to DECA
 
 			</div>
 		</div>
@@ -58,10 +73,10 @@
 						</div>
 						<div class="form-group">
 							<label>Student ID</label>
-							<input type="text" class="form-control" name="studentid" value="<%= user.local.studentid %>">
+							<input type="text" class="form-control" name="studentID" value="<%= user.local.studentID %>">
 						</div>
 
-						<button type="submit" class="btn btn-warning btn-lg">Update Info</button>
+						<button type="submit" class="btn-submit btn btn-warning btn-lg">Update Info</button>
 					</form>
 				</h3>
 			</div>
