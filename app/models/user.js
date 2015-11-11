@@ -13,7 +13,9 @@ var userSchema = mongoose.Schema({
         lastname: String,
         grade: Number,
         birthday: String,
-        studentID: String
+        studentID: String,
+        parent1email: String,
+        parent2email: String
     }
 });
 
