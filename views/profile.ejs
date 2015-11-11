@@ -13,7 +13,7 @@
 
 		}
 
-		.btn-submit { 
+		.btn-submit {
 			border: 1px solid black;
 			color: black;
 			border-radius: initial !important;
@@ -74,6 +74,14 @@
 						<div class="form-group">
 							<label>Student ID</label>
 							<input type="text" class="form-control" name="studentID" value="<%= user.local.studentID %>">
+						</div>
+						<div class="form-group">
+							<label>Parent/Guardian 1 Email</label>
+							<input type="text" class="form-control" name="parent1email" value="<%= user.local.parent1email %>">
+						</div>
+						<div class="form-group">
+							<label>Parent/Guardian 2 Email</label>
+							<input type="text" class="form-control" name="parent2email" value="<%= user.local.parent2email %>">
 						</div>
 
 						<button type="submit" class="btn-submit btn btn-warning btn-lg">Update Info</button>

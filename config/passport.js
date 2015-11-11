@@ -67,6 +67,8 @@ module.exports = function(passport) {
             		newUser.local.grade = req.body.grade;
             		newUser.local.birthday = req.body.birthday;
             		newUser.local.studentID = req.body.studentID;
+                newUser.local.parent1email = req.body.parent1email;
+            		newUser.local.parent2email = req.body.parent2email;
             		newUser.save(function (err, member) {
             			if (err) return console.error(err);
             			console.log("saved");
