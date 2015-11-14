@@ -64,7 +64,15 @@
 					<% }
 					else
 					{%>
-						Welcome to DECA
+						Welcome to DECA<br><br>
+
+						<% if (user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "--" || user.local.regionalsWritten == null || user.local.regionalsWritten == "--")
+						{
+							%>
+							You have not signed up for a regionals event yet!<br>
+						<%}%>
+
+
 					<% } %>
 
 				</div>
@@ -78,6 +86,7 @@
 							<select name="regionalsRoleplay" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
 								<%
 									var options = [
+										"--",
 										"PBM Principles of Business Management and Administration",
 										"PFN Principles of Finance",
 										"PHT Principles of Hospitality and Tourism",
@@ -113,6 +122,7 @@
 							<select name="regionalsWritten" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
 								<%
 									var options = [
+										"--",
 										"BOR Business Services Operations Research",
 										"BMOR Buying and Merchandising Operations Research",
 										"HTOR Hospitality and Tourism Operations Research",
