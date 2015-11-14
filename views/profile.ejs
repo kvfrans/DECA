@@ -36,15 +36,94 @@
 
 	<div class="row">
 
-		<!-- LOCAL INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3><span class="fa fa-user"></span>Updates!</h3>
 
-				Welcome to DECA
+			<div class="col-sm-6">
+				<div class="well">
+					<h3><span class="fa fa-user"></span>Updates!</h3>
 
+					<% if (user.local.email == "gunndeca") { %>
+						hey deca admin
+					<% }
+					else
+					{%>
+						Welcome to DECA
+					<% } %>
+
+				</div>
+				<div class="well">
+					<h3><span class="fa fa-user"></span>Sign up for Regionals</h3>
+
+					<form action="/setRegionals" method="post">
+						<div class="form-group">
+							<label>Roleplay</label>
+
+							<select name="regionalsRoleplay" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
+								<%
+									var options = [
+										"PBM Principles of Business Management and Administration",
+										"PFN Principles of Finance",
+										"PHT Principles of Hospitality and Tourism",
+										"PMK Principles of Marketing",
+										"BLTDM Business Law and Ethics Team Decision Making",
+										"BTDM Buying and Merchandising Team Decision Making",
+										"FTDM Financial Services Team Decision Making",
+										"HTDM Hospitality Services Team Decision Making",
+										"MTDM Marketing Communications Team Decision Making",
+										"STDM Sports and Entertainment Marketing Team Decision Making",
+										"TTDM Travel and Tourism Marketing Team Decision Making",
+										"AAM Apparel and Accessories Marketing Series",
+										"ASM Automotive Services Marketing Series",
+										"BFS Business Finance Series",
+										"BSM Business Services Marketing Series",
+										"FMS Food Marketing Series",
+										"HLM Hotel and Lodging Management Series",
+										"HRM Human Resource Management Series",
+										"MMS Marketing Management Series",
+										"QSRM Quick Serve Restaurant Management Series",
+										"RFSM Restaurant and Food Service Management",
+										"RMS Retail Merchandising Series",
+										"SEM Sports and Entertainment Marketing Series"
+									]
+									for(var i = 0; i < options.length; i++) { %>
+										<option <% if (user.local.regionalsRoleplay == options[i]) { %>selected<% } %> >  <%= options[i] %>  </option>
+									<% }
+								%>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Written</label>
+							<select name="regionalsWritten" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
+								<%
+									var options = [
+										"BOR Business Services Operations Research",
+										"BMOR Buying and Merchandising Operations Research",
+										"HTOR Hospitality and Tourism Operations Research",
+										"SEOR Sports and Entertainment Marketing Operations Research",
+										"EIP Innovation Plan",
+										"EIB Independent Business Plan",
+										"ESB Start-Up Business Plan",
+										"EBG Business Growth Plan",
+										"ADC Advertising Campaign Event",
+										"FMP Fashion Merchandising Promotion Plan",
+										"SEPP Sports and Entertainment Promotion Plan",
+										"FCE Financial Consulting Event",
+										"HTPS Hospitality and Tourism Professional Selling",
+										"PSE Professional Selling "
+									]
+									for(var i = 0; i < options.length; i++) { %>
+										<option <% if (user.local.regionalsWritten == options[i]) { %>selected<% } %> >  <%= options[i] %>  </option>
+									<% }
+								%>
+							</select>
+						</div>
+						<button type="submit" class="btn-submit btn btn-warning btn-lg">Save</button>
+					</form>
+				</div>
 			</div>
-		</div>
+
+
+
+
 
 		<div class="col-sm-6">
 			<div class="well">
@@ -61,10 +140,12 @@
 						<div class="form-group">
 							<label>Grade</label>
 							<select name="grade" class="form-control" id="grade" selected=<%= user.local.grade %>>
-								<option <% if (user.local.grade == 9) { %>selected<% } %> >9</option>
-								<option <% if (user.local.grade == 10) { %>selected<% } %> >10</option>
-								<option <% if (user.local.grade == 11) { %>selected<% } %> >11</option>
-								<option <% if (user.local.grade == 12) { %>selected<% } %> >12</option>
+								<%
+									var options = [9,10,11,12]
+									for(var i = 0; i < options.length; i++) { %>
+										<option <% if (user.local.grade == options[i]) { %>selected<% } %> >  <%= options[i] %>  </option>
+									<% }
+								%>
 							</select>
 						</div>
 						<div class="form-group">

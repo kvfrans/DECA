@@ -1,11 +1,27 @@
 // app/routes.js
+
 module.exports = function(app, passport) {
+
+	var mongoose = require('mongoose')
 
 	// =====================================
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index.ejs'); // load the index.ejs file
+		var userMap = {};
+		mongoose.model("User").find({}, function(err, users)
+		{
+	    users.forEach(function(user) {
+	      userMap[user._id] = user;
+	    });
+
+			console.log(userMap);
+			res.render('index.ejs',{
+				// members: userMap
+			}); // load the index.ejs file
+	  });
+
+
 	});
 
 	// =====================================
@@ -81,6 +97,20 @@ module.exports = function(app, passport) {
 		req.user.local.studentID = req.body.studentID;
 		req.user.local.parent1email = req.body.parent1email;
 		req.user.local.parent2email = req.body.parent2email;
+		req.user.save(function (err, member) {
+			if (err) return console.error(err);
+			console.log("saved");
+		});
+		res.redirect('/profile');
+	});
+
+	app.post('/setRegionals', function(req, res)
+	{
+		console.log("got post");
+		console.log(req.user.local.email);
+		console.log(req.body.firstname);
+		req.user.local.regionalsWritten = req.body.regionalsWritten;
+		req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
 		req.user.save(function (err, member) {
 			if (err) return console.error(err);
 			console.log("saved");
