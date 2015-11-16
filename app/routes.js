@@ -106,16 +106,31 @@ module.exports = function(app, passport) {
 
 	app.post('/setRegionals', function(req, res)
 	{
+		console.log(req.body);
 		console.log("got post");
 		console.log(req.user.local.email);
 		console.log(req.body.firstname);
-		req.user.local.regionalsWritten = req.body.regionalsWritten;
-		req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
-		req.user.save(function (err, member) {
-			if (err) return console.error(err);
-			console.log("saved");
-		});
-		res.redirect('/profile');
+		console.log(req.body.submitbutton);
+		if (req.body.submitbutton == 'save'){
+			req.user.local.regionalsWritten = req.body.regionalsWritten;
+			req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
+			req.user.local.regionalsTShirt = req.body.regionalsTShirt;
+			req.user.save(function (err, member) {
+				if (err) return console.error(err);
+				console.log("saved");
+			});
+			res.redirect('/profile');
+		}
+		else {
+			req.user.local.regionalsWritten = null;
+			req.user.local.regionalsRoleplay = null;
+			req.user.local.regionalsTShirt = null;
+			req.user.save(function (err, member){
+				if (err) return console.error(err);
+				console.log("saved");
+			});
+			res.redirect('/profile');
+		}
 	});
 };
 

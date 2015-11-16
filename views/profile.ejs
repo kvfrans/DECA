@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
-		body 		{ padding-top:40px; word-wrap:break-word; }
+		body 		{ padding-top:0px; word-wrap:break-word; }
 		.form-control {
 			border: 1px solid black;
 			border-radius: initial !important;
@@ -66,19 +66,20 @@
 					{%>
 						Welcome to DECA<br><br>
 
-						<% if (user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED" || user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED")
+						<% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
 						{
 							%>
 							<p>
-							Please sign up for the Regionals Event below! Simply choose two events that you would like to compete in as well as your tshirt size and you will receive further information! <br><br>Events can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
+							 Sign up for the Regionals Conference below! Select up to two events (One Roleplay Event and/or one Written Event) that you would like to compete in, your tshirt size and you will receive further information! <br><br>Events can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
 							</p>
 						<%}
 						else {
 							%>
 							<p>
-								You have been succesfully signed up for Regionals. You will be able to update your events until the final deadline.
+								You have been succesfully signed up for Regionals! You will be able to update your event selections until the final deadline.
 							</p>
 						<% }%>
+						<p>Registration closes <b>November 23</b> for early bird and <b>November 30</b> for final deadline.</p>
 
 
 					<% } %>
@@ -152,7 +153,36 @@
 								%>
 							</select>
 						</div>
-						<button type="submit" class="btn-submit btn btn-warning btn-lg">Save</button>
+						<div class="form-group">
+							<label>T-Shirt Size</label>
+							<select name="regionalsTShirt" class="form-control" id="grade" selected=<%= user.local.reginoalsTShirt %>>
+								<%
+									var options = [
+										"Small",
+										"Medium",
+										"Large",
+										"X-Large"
+									];
+									for (var i = 0; i < options.length; i++){ %>
+										<option <% if (user.local.regionalsTShirt == options[i]) { %>selected<% } %> >  <%= options[i] %>  </option>
+									<% }
+								%>
+							</select>
+						</div>
+						<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save"><% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
+						{
+							%>Register for Regionals
+							<% } else { %>
+							Update
+							<% } %>
+						</button>
+					<% if (((user.local.regionalsRoleplay != null && user.local.regionalsRoleplay != "NONE SELECTED") || (user.local.regionalsWritten != null && user.local.regionalsWritten != "NONE SELECTED"))) //if user has signed up for regionals
+						{
+							%>
+							
+						<button type="submit" class="btn-submit btn btn-lg" name="submitbutton" value="cancel">Cancel Registration</button>
+ 						<% } %>
+
 					</form>
 				</div>
 			</div>

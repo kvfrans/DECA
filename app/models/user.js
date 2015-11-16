@@ -17,7 +17,8 @@ var userSchema = mongoose.Schema({
         parent1email: String,
         parent2email: String,
         regionalsRoleplay: String,
-        regionalsWritten: String
+        regionalsWritten: String,
+        regionalsTShirt: String
     }
 });
 
