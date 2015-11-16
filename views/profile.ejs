@@ -66,11 +66,19 @@
 					{%>
 						Welcome to DECA<br><br>
 
-						<% if (user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "--" || user.local.regionalsWritten == null || user.local.regionalsWritten == "--")
+						<% if (user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED" || user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED")
 						{
 							%>
-							You have not signed up for a regionals event yet!<br>
-						<%}%>
+							<p>
+							Please sign up for the Regionals Event below! Simply choose two events that you would like to compete in as well as your tshirt size and you will receive further information! <br><br>Events can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
+							</p>
+						<%}
+						else {
+							%>
+							<p>
+								You have been succesfully signed up for Regionals. You will be able to update your events until the final deadline.
+							</p>
+						<% }%>
 
 
 					<% } %>
@@ -86,7 +94,7 @@
 							<select name="regionalsRoleplay" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
 								<%
 									var options = [
-										"--",
+										"NONE SELECTED",
 										"PBM Principles of Business Management and Administration",
 										"PFN Principles of Finance",
 										"PHT Principles of Hospitality and Tourism",
@@ -122,7 +130,7 @@
 							<select name="regionalsWritten" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
 								<%
 									var options = [
-										"--",
+										"NONE SELECTED",
 										"BOR Business Services Operations Research",
 										"BMOR Buying and Merchandising Operations Research",
 										"HTOR Hospitality and Tourism Operations Research",
