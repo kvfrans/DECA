@@ -69,8 +69,16 @@
 						<% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
 						{
 							%>
+							<h5><strong>SVCDC - Silicon Valley Career Development Conference Registration</strong></h5>
 							<p>
-							 Sign up for the Regionals Conference below! Select up to two events (One Roleplay Event and/or one Written Event) that you would like to compete in, your tshirt size and you will receive further information! <br><br>Events can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
+							 Regionals Registration has begun! Begin the registration process below</P>
+							 <ui>
+							 	<li>Select up to two events (One Roleplay Event and/or one Written Event,</li>
+							 	<li>T-Shirt Size</li>
+							 	<li>Check your email for further forms and information</li>
+							 </ul>
+							 <p>
+							 	Event descriptions can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
 							</p>
 						<%}
 						else {
@@ -78,8 +86,25 @@
 							<p>
 								You have been succesfully signed up for Regionals! You will be able to update your event selections until the final deadline.
 							</p>
-						<% }%>
-						<p>Registration closes <b>November 23</b> for early bird and <b>November 30</b> for final deadline.</p>
+						<% if (user.local.regionalsForms == null){
+							%>
+							<p style="color:red;"><b>Form Status: Unsubmitted</b></p>
+						<% } else {
+							%>
+							<p style="color:green"><b>Form Status: Submitted</b></p>
+							<%
+						}
+						 if (user.local.regionalsChecks == null){
+							%>
+							<p style="color:red;"><b>Check Status: Unsubmitted</b></p>
+						<% } else {
+							%>
+							<p style="color:green"><b>Check Status: Submitted</b></p>
+							<%
+						}
+					
+					}%>
+						<p>Registration closes <b>November 23</b> for early bird and <b>November 30</b> for final deadline. You must turn in all forms and checks by the deadline</p>
 
 
 					<% } %>
