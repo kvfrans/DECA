@@ -46,7 +46,6 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the signup form
 	app.get('/signup', function(req, res) {
-
 		// render the page and pass in any flash data if it exists
 		res.render('signup.ejs', { message: req.flash('signupMessage') });
 	});
@@ -73,6 +72,33 @@ module.exports = function(app, passport) {
 		res.render('profile.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
+	});
+
+
+	//ADMIN PANEL
+	app.get('/panel', isLoggedIn, function(req, res) {
+
+		if(req.user.local.email == "gunndeca")
+		{
+			var userMap = {};
+			mongoose.model("User").find({}, function(err, users)
+			{
+			    users.forEach(function(user) {
+					userMap[user._id] = user;
+			    });
+				console.log(userMap);
+				res.render('panel.ejs', {
+					user : req.user, // get the user out of session and pass to template
+					members: userMap
+				});
+			});
+		}
+		else
+		{
+			res.render('profile.ejs', {
+				user : req.user // get the user out of session and pass to template
+			});
+		}
 	});
 
 	// =====================================
