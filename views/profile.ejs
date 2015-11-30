@@ -111,6 +111,34 @@
 					<% } %>
 
 				</div>
+
+
+				<% if (user.local.regionalsChecks != null && user.local.regionalsChecks != null)
+				{
+				%>
+					<div class="well">
+						<h3><span class="fa fa-user"></span>Choose Roommates</h3>
+
+						<form action="/regionalsRoommate" method="post">
+							<div class="form-group">
+								<label>Roommate 1</label>
+								<input type="text" class="form-control" name="regionalsRoommate1" value="<%= user.local.regionalsRoommate1 %>">
+							</div>
+							<div class="form-group">
+								<label>Roommate 2</label>
+								<input type="text" class="form-control" name="regionalsRoommate2" value="<%= user.local.regionalsRoommate2 %>">
+							</div>
+							<div class="form-group">
+								<label>Roommate 3</label>
+								<input type="text" class="form-control" name="regionalsRoommate3" value="<%= user.local.regionalsRoommate3 %>">
+							</div>
+							<button type="submit" class="btn-submit btn btn-warning btn-lg">Update Info</button>
+						</form>
+					</div>
+				<% } %>
+
+
+
 				<div class="well">
 					<h3><span class="fa fa-user"></span>Sign up for Regionals</h3>
 

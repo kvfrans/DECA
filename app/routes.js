@@ -29,7 +29,6 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the login form
 	app.get('/login', function(req, res) {
-
 		// render the page and pass in any flash data if it exists
 		res.render('login.ejs', { message: req.flash('loginMessage') });
 	});
@@ -74,11 +73,8 @@ module.exports = function(app, passport) {
 		});
 	});
 
-
-	//ADMIN PANEL
-	app.get('/panel', isLoggedIn, function(req, res) {
-
-		if(req.user.local.email == "gunndeca")
+	app.post('/panellogin', isLoggedIn, function(req, res) {
+		if(req.body == "test")
 		{
 			var userMap = {};
 			mongoose.model("User").find({}, function(err, users)
@@ -93,12 +89,21 @@ module.exports = function(app, passport) {
 				});
 			});
 		}
-		else
-		{
+		else {
 			res.render('profile.ejs', {
 				user : req.user // get the user out of session and pass to template
 			});
 		}
+	});
+
+
+	//ADMIN PANEL
+	app.get('/panel', isLoggedIn, function(req, res) {
+
+		res.render('profile.ejs', {
+			user : req.user // get the user out of session and pass to template
+		});
+
 	});
 
 	// =====================================
@@ -157,6 +162,19 @@ module.exports = function(app, passport) {
 			});
 			res.redirect('/profile');
 		}
+	});
+
+
+	app.post('/regionalsRoommate', function(req, res)
+	{
+			req.user.local.regionalsRoommate1 = req.body.regionalsRoommate1;
+			req.user.local.regionalsRoommate2 = req.body.regionalsRoommate2;
+			req.user.local.regionalsRoommate3 = req.body.regionalsRoommate3;
+			req.user.save(function (err, member) {
+				if (err) return console.error(err);
+				console.log("saved");
+			});
+			res.redirect('/profile');
 	});
 };
 

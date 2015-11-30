@@ -20,7 +20,10 @@ var userSchema = mongoose.Schema({
         regionalsWritten: String,
         regionalsTShirt: String,
         regionalsForms: String,
-        regionalsChecks: String
+        regionalsChecks: String,
+        regionalsRoommate1: String,
+        regionalsRoommate2: String,
+        regionalsRoommate3: String
     }
 });
 
