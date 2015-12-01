@@ -1,7 +1,6 @@
-//var firstname = ["Amit", "Jenny", "Cheryl", "Emily", "Lucas", "Lawrence", "Andrew", "Aaron", "Kaelyn", "Urmi", "Michelle", "Jordan", "Sean", "Emily", "Grace", "Justine", "Michael", "Christopher", "Celine", "Audrey", "Daniel", "Michael", "Cindy", "Dana", "Tiffany", "Michael", "Jeffrey", "Julie"]
+//var firstname = [ "Alexandra", "Dominik", "Lena", "Vidur", "Misty", "Eric", "Raymond", "Shirley", "Cassie", "Aditya", "William", "Leonard", "Hoyoung", "Karen", "Bo", "Samir", "Jamie", "Kobe", "Stephanie", "Isabel", "Simon", "Jocelyn", "David", "Kathleen", "Young", "Timothy", "Emily"]
 
-
-//var lastname = ["Rao", "Han", "Kao", "Mo", "Batties", "Chen", "Schloss", "Babian", "Schloss", "Hofland", "Cheong", "Tam", "Lin", "Wong", "Ding", "Cho", "Jeong", "Ting", "Shaw", "Li", "Chu", "Wu", "Guo", "Zhao", "Yang", "Huang", "Lee-Heidenreich", "Lee"]
+//var lastname = [ "Ting", "Lucha", "Ye", "Thukral", "Hong", "Wang", "Wu", "Zhang", "Chou", "Ganapathi", "Liu", "Wong", "Lee", "Zhu", "Rasmussen", "Puranik", "Huang", "Chang", "Zhang", "Wei", "Rufer", "Liu", "Hou", "Ji", "Lee", "Sears", "Cao"]
 
 var firstname = ["Jonathan"];
 var lastname = ["Zhang"];
