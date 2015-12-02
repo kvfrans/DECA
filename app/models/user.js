@@ -23,7 +23,11 @@ var userSchema = mongoose.Schema({
         regionalsChecks: String,
         regionalsRoommate1: String,
         regionalsRoommate2: String,
-        regionalsRoommate3: String
+        regionalsRoommate3: String,
+        writtenPartner1: String,
+        writtenPartner2: String,
+        regionalsEventsFinalized: Number,
+        roleplayPartner: String
     }
 });
 

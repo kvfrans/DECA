@@ -3,6 +3,7 @@
 module.exports = function(app, passport) {
 
 	var mongoose = require('mongoose')
+	var sendgrid  = require('sendgrid')("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");
 
 	// =====================================
 	// HOME PAGE (with login links) ========
@@ -137,11 +138,6 @@ module.exports = function(app, passport) {
 
 	app.post('/setRegionals', function(req, res)
 	{
-		console.log(req.body);
-		console.log("got post");
-		console.log(req.user.local.email);
-		console.log(req.body.firstname);
-		console.log(req.body.submitbutton);
 		if (req.body.submitbutton == 'save'){
 			req.user.local.regionalsWritten = req.body.regionalsWritten;
 			req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
@@ -162,6 +158,51 @@ module.exports = function(app, passport) {
 			});
 			res.redirect('/profile');
 		}
+	});
+
+	app.post('/setRegionalsFinal', function(req, res)
+	{
+		console.log(req.body.writtenPartner1);
+		req.user.local.regionalsWritten = req.body.regionalsWritten;
+		req.user.local.writtenPartner1 = req.body.writtenPartner1;
+		req.user.local.writtenPartner2 = req.body.writtenPartner2;
+		req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
+		req.user.local.roleplayPartner = req.body.roleplayPartner;
+		req.user.local.regionalsTShirt = req.body.regionalsTShirt;
+		req.user.local.regionalsEventsFinalized = 1;
+		req.user.save(function (err, member) {
+			if (err) return console.error(err);
+			console.log("saved");
+		});
+
+		res.redirect('/profile');
+		sendgrid.send({
+		  to:       req.user.local.email,
+		  from:     'kevin@gunndeca.org',
+		  subject:  'Regionals Confirmation',
+		  text:
+		  'Event 1: ' + req.user.local.regionalsWritten + "   " +
+		  'Partner 1: ' + req.user.local.writtenPartner1 + "   " +
+		  'Partner 2: ' + req.user.local.writtenPartner2 + "   " +
+		  'Event 2: ' + req.user.local.regionalsRoleplay + "   " +
+		  'Partner: ' + req.user.local.roleplayPartner + "   " +
+		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + "   " +
+		  'Roommate Choice 2: ' + req.user.local.regionalsRoommate2 + "   " +
+		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3,
+		  html:
+		  'Event 1: ' + req.user.local.regionalsWritten + "<br> " +
+		  'Partner 1: ' + req.user.local.writtenPartner1 + "<br>" +
+		  'Partner 2: ' + req.user.local.writtenPartner2 + "<br>" +
+		  'Event 2: ' + req.user.local.regionalsRoleplay + "<br>" +
+		  'Partner: ' + req.user.local.roleplayPartner + "<br>" +
+		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + "<br>" +
+		  'Roommate Choice 2: ' + req.user.local.regionalsRoommate2 + "<br>" +
+		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3
+
+		}, function(err, json) {
+		  if (err) { return console.error(err); }
+		  console.log(json);
+		});
 	});
 
 

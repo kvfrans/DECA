@@ -72,15 +72,7 @@
 							%>
 							<h5><strong>SVCDC - Silicon Valley Career Development Conference Registration</strong></h5>
 							<p>
-							 Regionals Registration has begun! Begin the registration process below</P>
-							 <ui>
-							 	<li>Select up to two events (One Roleplay Event and/or one Written Event,</li>
-							 	<li>T-Shirt Size</li>
-							 	<li>Check your email for further forms and information</li>
-							 </ul>
-							 <p>
-							 	Event descriptions can be found on the <a href="http://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank">DECA website</a>.
-							</p>
+							 Regionals Regristration has closed. Please come again for states!</P>
 						<%}
 						else {
 							%>
@@ -102,13 +94,27 @@
 							%>
 							<p style="color:green"><b>Check Status: Submitted</b></p>
 							<%
+						}%>
+
+						<% if (user.local.regionalsEventsFinalized == null){
+							%>
+							<p style="color:red;"><b>Event Finalization: Unsubmitted</b></p>
+						<% } else {
+							%>
+							<p style="color:green"><b>Form Status: Submitted</b></p>
+							<%
 						}
+						 if (user.local.regionalsRoommate1 == null){
+							%>
+							<p style="color:red;"><b>Roommate Selection: Incomplete</b></p>
+						<% } else {
+							%>
+							<p style="color:green"><b>Roommate Selection: Complete</b></p>
+							<%
+						}%>
 
-					}%>
-						<p>Registration closes <b>November 23</b> for early bird and <b>November 30</b> for final deadline. You must turn in all forms and checks by the deadline</p>
 
-
-					<% } %>
+					<% }} %>
 
 				</div>
 
@@ -122,15 +128,15 @@
 						<form action="/regionalsRoommate" method="post">
 							<div class="form-group">
 								<label>Roommate 1</label>
-								<input type="text" class="form-control" name="regionalsRoommate1" value="<%= user.local.regionalsRoommate1 %>">
+								<input type="text" class="form-control" name="regionalsRoommate1" value="<%= user.local.regionalsRoommate1 %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
 							</div>
 							<div class="form-group">
 								<label>Roommate 2</label>
-								<input type="text" class="form-control" name="regionalsRoommate2" value="<%= user.local.regionalsRoommate2 %>">
+								<input type="text" class="form-control" name="regionalsRoommate2" value="<%= user.local.regionalsRoommate2 %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
 							</div>
 							<div class="form-group">
 								<label>Roommate 3</label>
-								<input type="text" class="form-control" name="regionalsRoommate3" value="<%= user.local.regionalsRoommate3 %>">
+								<input type="text" class="form-control" name="regionalsRoommate3" value="<%= user.local.regionalsRoommate3 %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
 							</div>
 							<button type="submit" class="btn-submit btn btn-warning btn-lg">Update Info</button>
 						</form>
@@ -140,9 +146,25 @@
 
 
 				<div class="well">
-					<h3><span class="fa fa-user"></span>Sign up for Regionals</h3>
+					<h3><span class="fa fa-user"></span>
 
+						<% if (user.local.regionalsChecks && user.local.regionalsForms){
+						%>
+							Finalize Regristration
+						<%
+						}else{
+						%>
+
+						Sign up for Regionals
+						<%}%>
+
+					</h3>
+
+					<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
+					<form action="/setRegionalsFinal" method="post">
+						<%}else{%>
 					<form action="/setRegionals" method="post">
+						<%}%>
 						<div class="form-group">
 							<label>Roleplay</label>
 
@@ -180,6 +202,11 @@
 									<% }
 								%>
 							</select>
+							<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
+								<label>Roleplay Partner</label>
+								<input type="text" class="form-control" name="roleplayPartner"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.roleplayPartner %>" <%}%> >
+							<%}%>
+
 						</div>
 						<div class="form-group">
 							<label>Written</label>
@@ -209,6 +236,12 @@
 									<% }
 								%>
 							</select>
+							<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
+								<label>Written Partner 1</label>
+								<input type="text" class="form-control" name="writtenPartner1"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.writtenPartner1 %>" <%}%> >
+								<label>Written Partner 2</label>
+								<input type="text" class="form-control" name="writtenPartner2"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.writtenPartner2 %>" <%}%> >
+							<%}%>
 						</div>
 						<div class="form-group">
 							<label>T-Shirt Size</label>
@@ -226,19 +259,33 @@
 								%>
 							</select>
 						</div>
-						<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save"><% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
-						{
-							%>Register for Regionals
-							<% } else { %>
-							Update
-							<% } %>
-						</button>
-					<% if (((user.local.regionalsRoleplay != null && user.local.regionalsRoleplay != "NONE SELECTED") || (user.local.regionalsWritten != null && user.local.regionalsWritten != "NONE SELECTED"))) //if user has signed up for regionals
-						{
-							%>
 
-						<button type="submit" class="btn-submit btn btn-lg" name="submitbutton" value="cancel">Cancel Registration</button>
- 						<% } %>
+						<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
+
+
+							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save">Finalize</button>
+
+
+						<% }else{%>
+
+
+
+							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save"><% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
+							{
+								%>Register for Regionals
+								<% } else { %>
+								Update
+								<% } %>
+							</button>
+						<% if (((user.local.regionalsRoleplay != null && user.local.regionalsRoleplay != "NONE SELECTED") || (user.local.regionalsWritten != null && user.local.regionalsWritten != "NONE SELECTED"))) //if user has signed up for regionals
+							{
+								%>
+
+							<button type="submit" class="btn-submit btn btn-lg" name="submitbutton" value="cancel">Cancel Registration</button>
+	 						<% } %>
+
+
+						<%}%>
 
 					</form>
 				</div>
