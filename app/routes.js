@@ -181,23 +181,25 @@ module.exports = function(app, passport) {
 		  from:     'kevin@gunndeca.org',
 		  subject:  'Regionals Confirmation',
 		  text:
-		  'Event 1: ' + req.user.local.regionalsWritten + "   " +
-		  'Partner 1: ' + req.user.local.writtenPartner1 + "   " +
-		  'Partner 2: ' + req.user.local.writtenPartner2 + "   " +
-		  'Event 2: ' + req.user.local.regionalsRoleplay + "   " +
-		  'Partner: ' + req.user.local.roleplayPartner + "   " +
-		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + "   " +
-		  'Roommate Choice 2: ' + req.user.local.regionalsRoommate2 + "   " +
-		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3,
+		  'Hello ' + req.user.local.firstname + ' \n ' +
+		  'You have been succesfully completed all registration steps for Reigonals. Below is your confirmation. \n' +
+		  'Written Event: ' + req.user.local.regionalsWritten + " \n  " +
+		  'Partner 1: ' + (req.user.local.writtenPartner1 ? req.user.local.writtenPartner1 : "None") + " \n  " +
+		  'Partner 2: ' + (req.user.local.writtenPartner2 ? req.user.local.writtenPartner2 : "None") + " \n  " +
+		  'Event 2: ' + req.user.local.regionalsRoleplay + " \n  " +
+		  'Partner: ' + (req.user.local.roleplayPartner ? req.user.local.roleplayPartner : "None") + "  \n " +
+		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + " \n  " +
+		  'Roommate Choice 2: ' + (req.user.local.regionalsRoommate2 ? req.user.local.regionalsRoommate2 : "None") + " \n  " +
+		  'Roommate Choice 3: ' + (req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None") ,
 		  html:
 		  'Event 1: ' + req.user.local.regionalsWritten + "<br> " +
-		  'Partner 1: ' + req.user.local.writtenPartner1 + "<br>" +
-		  'Partner 2: ' + req.user.local.writtenPartner2 + "<br>" +
+		  'Partner 1: ' + (req.user.local.writtenPartner1) ? req.user.local.writtenPartner1 : "None" + "<br>" +
+		  'Partner 2: ' + (req.user.local.writtenPartner2) ? req.user.local.writtenPartner2 : "None" + "<br>" +
 		  'Event 2: ' + req.user.local.regionalsRoleplay + "<br>" +
-		  'Partner: ' + req.user.local.roleplayPartner + "<br>" +
+		  'Partner: ' + (req.user.local.roleplayPartner) ? req.user.local.roleplayPartner : "None" + "<br>" +
 		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + "<br>" +
-		  'Roommate Choice 2: ' + req.user.local.regionalsRoommate2 + "<br>" +
-		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3
+		  'Roommate Choice 2: ' + (req.user.local.regionalsRoommate2 ? req.user.local.regionalsRoommate2 : "None" + "<br>" +
+		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None")
 
 		}, function(err, json) {
 		  if (err) { return console.error(err); }

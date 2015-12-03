@@ -1,0 +1,225 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   '-g',
+1 verbose cli   'install',
+1 verbose cli   'js-beautify' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose install initial load of /usr/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/lib/package.json
+6 silly cache add args [ 'js-beautify', null ]
+7 verbose cache add spec js-beautify
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'js-beautify',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'js-beautify',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed js-beautify@*
+10 verbose addNamed "*" is a valid semver range for js-beautify
+11 silly addNameRange { name: 'js-beautify', range: '*', hasData: false }
+12 silly mapToRegistry name js-beautify
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/js-beautify
+16 verbose addNameRange registry:https://registry.npmjs.org/js-beautify not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/js-beautify
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 10:11:11 PM
+20 verbose request id c4c45f89d2275858
+21 http request GET https://registry.npmjs.org/js-beautify
+22 http 200 https://registry.npmjs.org/js-beautify
+23 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 verbose headers   etag: '"291S0OXUM2732NP7SGANJANOC"',
+23 verbose headers   'content-type': 'application/json',
+23 verbose headers   'cache-control': 'max-age=60',
+23 verbose headers   'content-length': '81369',
+23 verbose headers   'accept-ranges': 'bytes',
+23 verbose headers   date: 'Thu, 03 Dec 2015 06:11:13 GMT',
+23 verbose headers   via: '1.1 varnish',
+23 verbose headers   age: '28',
+23 verbose headers   connection: 'keep-alive',
+23 verbose headers   'x-served-by': 'cache-sjc3133-SJC',
+23 verbose headers   'x-cache': 'HIT',
+23 verbose headers   'x-cache-hits': '2',
+23 verbose headers   'x-timer': 'S1449123073.977328,VS0,VE0',
+23 verbose headers   vary: 'Accept' }
+24 silly get cb [ 200,
+24 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"291S0OXUM2732NP7SGANJANOC"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     'content-length': '81369',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     date: 'Thu, 03 Dec 2015 06:11:13 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '28',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-sjc3133-SJC',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '2',
+24 silly get     'x-timer': 'S1449123073.977328,VS0,VE0',
+24 silly get     vary: 'Accept' } ]
+25 verbose get saving js-beautify to /home/deca/.npm/registry.npmjs.org/js-beautify/.cache.json
+26 silly addNameRange number 2 { name: 'js-beautify', range: '*', hasData: true }
+27 silly addNameRange versions [ 'js-beautify',
+27 silly addNameRange   [ '0.1.8',
+27 silly addNameRange     '0.2.0',
+27 silly addNameRange     '0.2.1',
+27 silly addNameRange     '0.2.2',
+27 silly addNameRange     '0.2.3',
+27 silly addNameRange     '0.2.4',
+27 silly addNameRange     '0.3.0',
+27 silly addNameRange     '0.3.1',
+27 silly addNameRange     '0.3.2',
+27 silly addNameRange     '0.3.3',
+27 silly addNameRange     '0.3.4',
+27 silly addNameRange     '0.3.5',
+27 silly addNameRange     '0.3.6',
+27 silly addNameRange     '0.3.7',
+27 silly addNameRange     '0.3.8',
+27 silly addNameRange     '0.3.9',
+27 silly addNameRange     '0.4.0',
+27 silly addNameRange     '0.4.1',
+27 silly addNameRange     '0.4.2',
+27 silly addNameRange     '1.2.0',
+27 silly addNameRange     '1.3.0',
+27 silly addNameRange     '1.3.1',
+27 silly addNameRange     '1.3.2',
+27 silly addNameRange     '1.3.3',
+27 silly addNameRange     '1.3.4',
+27 silly addNameRange     '1.4.0',
+27 silly addNameRange     '1.4.1',
+27 silly addNameRange     '1.4.2',
+27 silly addNameRange     '1.5.1',
+27 silly addNameRange     '1.5.2',
+27 silly addNameRange     '1.5.3',
+27 silly addNameRange     '1.5.4',
+27 silly addNameRange     '1.5.5',
+27 silly addNameRange     '1.5.6',
+27 silly addNameRange     '1.5.7',
+27 silly addNameRange     '1.5.8',
+27 silly addNameRange     '1.5.9',
+27 silly addNameRange     '1.5.10' ] ]
+28 silly addNamed js-beautify@1.5.10
+29 verbose addNamed "1.5.10" is a plain semver version for js-beautify
+30 silly mapToRegistry name js-beautify
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/js-beautify
+34 verbose addRemoteTarball https://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz',
+35 verbose addRemoteTarball   '4d95371702699344a516ca26bf59f0a27bb75719' ]
+36 info retry fetch attempt 1 at 10:11:14 PM
+37 info attempt registry request try #1 at 10:11:14 PM
+38 http fetch GET https://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz
+39 http fetch 200 https://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz
+40 silly fetchAndShaCheck shasum 4d95371702699344a516ca26bf59f0a27bb75719
+41 verbose addTmpTarball /tmp/npm-9370-6d1b34b5/registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz not in flight; adding
+42 verbose addTmpTarball already have metadata; skipping unpack for js-beautify@1.5.10
+43 silly cache afterAdd js-beautify@1.5.10
+44 verbose afterAdd /home/deca/.npm/js-beautify/1.5.10/package/package.json not in flight; writing
+45 verbose afterAdd /home/deca/.npm/js-beautify/1.5.10/package/package.json written
+46 silly install resolved [ { name: 'js-beautify',
+46 silly install resolved     version: '1.5.10',
+46 silly install resolved     description: 'jsbeautifier.org for node',
+46 silly install resolved     main: 'js/index.js',
+46 silly install resolved     preferGlobal: true,
+46 silly install resolved     bin:
+46 silly install resolved      { 'css-beautify': './js/bin/css-beautify.js',
+46 silly install resolved        'html-beautify': './js/bin/html-beautify.js',
+46 silly install resolved        'js-beautify': './js/bin/js-beautify.js' },
+46 silly install resolved     directories: { lib: 'js/lib', test: 'js/test' },
+46 silly install resolved     scripts:
+46 silly install resolved      { test: './js/test/shell-smoke-test.sh',
+46 silly install resolved        'update-codemirror': 'npm install codemirror && rm -rf ./web/third-party/codemirror/* && cp ./node_modules/codemirror/LICENSE ./web/third-party/codemirror/ && cp ./node_modules/codemirror/README.md ./web/third-party/codemirror/ && cp -r ./node_modules/codemirror/lib ./web/third-party/codemirror/ && mkdir -p ./web/third-party/codemirror/mode && cp -r ./node_modules/codemirror/mode/javascript ./web/third-party/codemirror/mode/ && git add -Av ./web/third-party/codemirror' },
+46 silly install resolved     bugs: { url: 'https://github.com/beautify-web/js-beautify/issues' },
+46 silly install resolved     homepage: 'http://jsbeautifier.org/',
+46 silly install resolved     repository:
+46 silly install resolved      { type: 'git',
+46 silly install resolved        url: 'git://github.com/beautify-web/js-beautify.git' },
+46 silly install resolved     keywords: [ 'beautify', 'beautifier', 'code-quality' ],
+46 silly install resolved     author: { name: 'Einar Lielmanis', email: 'einar@jsbeautifier.org' },
+46 silly install resolved     contributors:
+46 silly install resolved      [ [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object],
+46 silly install resolved        [Object] ],
+46 silly install resolved     license: 'MIT',
+46 silly install resolved     dependencies: { 'config-chain': '~1.1.5', mkdirp: '~0.5.0', nopt: '~3.0.1' },
+46 silly install resolved     devDependencies:
+46 silly install resolved      { jshint: '~2.8.0',
+46 silly install resolved        'node-static': '~0.7.1',
+46 silly install resolved        mustache: '~1.1.0',
+46 silly install resolved        requirejs: '2.1.x',
+46 silly install resolved        benchmark: '1.0.0' },
+46 silly install resolved     gitHead: '880a854273aa50976a0228e08f623be6f24ab717',
+46 silly install resolved     _id: 'js-beautify@1.5.10',
+46 silly install resolved     _shasum: '4d95371702699344a516ca26bf59f0a27bb75719',
+46 silly install resolved     _from: 'js-beautify@*',
+46 silly install resolved     _npmVersion: '2.7.5',
+46 silly install resolved     _nodeVersion: '0.12.2',
+46 silly install resolved     _npmUser: { name: 'bitwiseman', email: 'bitwiseman@gmail.com' },
+46 silly install resolved     maintainers: [ [Object], [Object] ],
+46 silly install resolved     dist:
+46 silly install resolved      { shasum: '4d95371702699344a516ca26bf59f0a27bb75719',
+46 silly install resolved        tarball: 'http://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz' },
+46 silly install resolved     _resolved: 'https://registry.npmjs.org/js-beautify/-/js-beautify-1.5.10.tgz' } ]
+47 info install js-beautify@1.5.10 into /usr/lib
+48 info installOne js-beautify@1.5.10
+49 verbose installOne of js-beautify to /usr/lib not in flight; installing
+50 verbose lock using /home/deca/.npm/_locks/js-beautify-efde37a555c90f7d.lock for /usr/lib/node_modules/js-beautify
+51 silly install write writing js-beautify 1.5.10 to /usr/lib/node_modules/js-beautify
+52 verbose unbuild lib/node_modules/js-beautify
+53 silly gentlyRm /usr/lib/node_modules/js-beautify is being purged from base /usr
+54 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/js-beautify
+55 verbose tar unpack /home/deca/.npm/js-beautify/1.5.10/package.tgz
+56 verbose tar unpacking to /usr/lib/node_modules/js-beautify
+57 silly gentlyRm /usr/lib/node_modules/js-beautify is being purged
+58 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/js-beautify
+59 silly gunzTarPerm modes [ '775', '664' ]
+60 error tar.unpack untar error /home/deca/.npm/js-beautify/1.5.10/package.tgz
+61 verbose unlock done using /home/deca/.npm/_locks/js-beautify-efde37a555c90f7d.lock for /usr/lib/node_modules/js-beautify
+62 verbose fstream_path /usr/lib/node_modules/js-beautify
+63 verbose fstream_type Directory
+64 verbose fstream_class DirWriter
+65 verbose stack Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/js-beautify'
+65 verbose stack     at Error (native)
+66 verbose fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+66 verbose fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+66 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+67 verbose cwd /home/deca/Github/DECA
+68 error Linux 3.19.0-33-generic
+69 error argv "/usr/bin/nodejs" "/usr/bin/npm" "-g" "install" "js-beautify"
+70 error node v4.2.2
+71 error npm  v2.14.7
+72 error path /usr/lib/node_modules/js-beautify
+73 error code EACCES
+74 error errno -13
+75 error syscall mkdir
+76 error Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/js-beautify'
+76 error     at Error (native)
+76 error  { [Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/js-beautify']
+76 error   errno: -13,
+76 error   code: 'EACCES',
+76 error   syscall: 'mkdir',
+76 error   path: '/usr/lib/node_modules/js-beautify',
+76 error   fstream_type: 'Directory',
+76 error   fstream_path: '/usr/lib/node_modules/js-beautify',
+76 error   fstream_class: 'DirWriter',
+76 error   fstream_stack:
+76 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+76 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+76 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+77 error Please try running this command again as root/Administrator.
+78 verbose exit [ -13, true ]
+79 verbose unbuild lib/node_modules/js-beautify
+80 silly gentlyRm /usr/lib/node_modules/js-beautify is being purged from base /usr
+81 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/js-beautify
