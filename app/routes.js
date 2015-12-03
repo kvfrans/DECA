@@ -192,14 +192,16 @@ module.exports = function(app, passport) {
 		  'Roommate Choice 2: ' + (req.user.local.regionalsRoommate2 ? req.user.local.regionalsRoommate2 : "None") + " \n  " +
 		  'Roommate Choice 3: ' + (req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None") ,
 		  html:
-		  'Event 1: ' + req.user.local.regionalsWritten + "<br> " +
-		  'Partner 1: ' + (req.user.local.writtenPartner1) ? req.user.local.writtenPartner1 : "None" + "<br>" +
-		  'Partner 2: ' + (req.user.local.writtenPartner2) ? req.user.local.writtenPartner2 : "None" + "<br>" +
-		  'Event 2: ' + req.user.local.regionalsRoleplay + "<br>" +
-		  'Partner: ' + (req.user.local.roleplayPartner) ? req.user.local.roleplayPartner : "None" + "<br>" +
-		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + "<br>" +
-		  'Roommate Choice 2: ' + (req.user.local.regionalsRoommate2 ? req.user.local.regionalsRoommate2 : "None" + "<br>" +
-		  'Roommate Choice 3: ' + req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None")
+		  'Hello ' + req.user.local.firstname + ' <br> ' +
+		  'You have been succesfully completed all registration steps for Reigonals. Below is your confirmation. <br>' +
+		  'Written Event: ' + req.user.local.regionalsWritten + "<br>  " +
+		  'Partner 1: ' + (req.user.local.writtenPartner1 ? req.user.local.writtenPartner1 : "None") + " <br> " +
+		  'Partner 2: ' + (req.user.local.writtenPartner2 ? req.user.local.writtenPartner2 : "None") + " <br>  " +
+		  'Event 2: ' + req.user.local.regionalsRoleplay + " <br>  " +
+		  'Partner: ' + (req.user.local.roleplayPartner ? req.user.local.roleplayPartner : "None") + "  <br> " +
+		  'Roommate Choice 1: ' + req.user.local.regionalsRoommate1 + " <br>  " +
+		  'Roommate Choice 2: ' + (req.user.local.regionalsRoommate2 ? req.user.local.regionalsRoommate2 : "None") + " <br>  " +
+		  'Roommate Choice 3: ' + (req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None") ,
 
 		}, function(err, json) {
 		  if (err) { return console.error(err); }
