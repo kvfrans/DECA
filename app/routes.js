@@ -182,7 +182,7 @@ module.exports = function(app, passport) {
 		  subject:  'Regionals Confirmation',
 		  text:
 		  'Hello ' + req.user.local.firstname + ' \n ' +
-		  'You have been succesfully completed all registration steps for Reigonals. Below is your confirmation. \n' +
+		  'You have succesfully completed all registration steps for Regionals. Below is your confirmation. \n\n' +
 		  'Written Event: ' + req.user.local.regionalsWritten + " \n  " +
 		  'Partner 1: ' + (req.user.local.writtenPartner1 ? req.user.local.writtenPartner1 : "None") + " \n  " +
 		  'Partner 2: ' + (req.user.local.writtenPartner2 ? req.user.local.writtenPartner2 : "None") + " \n  " +
@@ -193,7 +193,7 @@ module.exports = function(app, passport) {
 		  'Roommate Choice 3: ' + (req.user.local.regionalsRoommate3 ? req.user.local.regionalsRoommate3 : "None") ,
 		  html:
 		  'Hello ' + req.user.local.firstname + ' <br> ' +
-		  'You have been succesfully completed all registration steps for Reigonals. Below is your confirmation. <br>' +
+		  'You have  succesfully completed all registration steps for Regionals. Below is your confirmation. <br>' +
 		  'Written Event: ' + req.user.local.regionalsWritten + "<br>  " +
 		  'Partner 1: ' + (req.user.local.writtenPartner1 ? req.user.local.writtenPartner1 : "None") + " <br> " +
 		  'Partner 2: ' + (req.user.local.writtenPartner2 ? req.user.local.writtenPartner2 : "None") + " <br>  " +
