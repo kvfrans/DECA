@@ -1,0 +1,522 @@
+MongoDB shell version: 2.6.11
+connecting to: localhost:27017/deca
+{
+	"_id" : ObjectId("565e5cb395f0057a214a9b5a"),
+	"local" : {
+		"email" : "emilyshuangyuecao@gmail.com",
+		"parent1email" : "caoying123@yahoo.com",
+		"parent2email" : "lihongca668@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565e41cd95f0057a214a9b50"),
+	"local" : {
+		"email" : "mcheong.michelle@gmail.com",
+		"parent1email" : "ritahyu@yahoo.com",
+		"parent2email" : "herocheong@gmail.com"
+	}
+}
+null
+{
+	"_id" : ObjectId("565f0d4b95f0057a214a9b61"),
+	"local" : {
+		"email" : "cassieachou@gmail.com",
+		"parent1email" : "peachflamingo@gmail.com",
+		"parent2email" : "jeff.chou@stanfordalumni.org"
+	}
+}
+{
+	"_id" : ObjectId("565e379f95f0057a214a9b47"),
+	"local" : {
+		"email" : "graceading@gmail.com",
+		"parent1email" : "kathywei2008@yahoo.com",
+		"parent2email" : "rui.ding@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e610595f0057a214a9b5b"),
+	"local" : {
+		"email" : "guo.katie.kazoo@gmail.com",
+		"parent1email" : "ghtrue@gmail.com",
+		"parent2email" : "ghtrue@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e676095f0057a214a9b5c"),
+	"local" : {
+		"email" : "jennyhan1999@gmail.com",
+		"parent1email" : "pwang0103@yahoo.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e5c7b95f0057a214a9b59"),
+	"local" : {
+		"email" : "uhofland@gmail.com",
+		"parent1email" : "hoflandhans99@gmail.com",
+		"parent2email" : "sunita.rajdev@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5660d421e143b9f1721be71d"),
+	"local" : {
+		"parent2email" : "Mink0627@gmail.com",
+		"parent1email" : "Eunha0323@gmail.com",
+		"email" : "misty.hong@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e357395f0057a214a9b45"),
+	"local" : {
+		"email" : "jamie.huang@gmail.com",
+		"parent1email" : "dhuang501@gmail.com",
+		"parent2email" : "joyce.hung@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e543e95f0057a214a9b58"),
+	"local" : {
+		"email" : "happyface.ca@gmail.com",
+		"parent1email" : "ssqh1000@gmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("56608c0ce143b9f1721be719"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "",
+		"email" : "jikathleen467@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5660fb8de143b9f1721be720"),
+	"local" : {
+		"parent2email" : "Jim_kao_cy@yahoo.com",
+		"parent1email" : "Zhenghuang7@gmail.com",
+		"email" : "cheryl.kao.ck@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e6a5795f0057a214a9b5d"),
+	"local" : {
+		"email" : "julielee1115@gmail.com",
+		"parent1email" : "kangtaeklee@gmail.com",
+		"parent2email" : "kyungah08@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e324e95f0057a214a9b43"),
+	"local" : {
+		"email" : "audreyli.betty@gmail.com",
+		"parent1email" : "lilingxi1964@163.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565ff5ad0475285c0473e45b"),
+	"local" : {
+		"email" : "15aquajewel@gmail.com",
+		"parent1email" : "shuing94303@yahoo.com",
+		"parent2email" : "kcliu09@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565cb78a95f0057a214a9b3a"),
+	"local" : {
+		"email" : "liujinyi99@gmail.com",
+		"parent1email" : "",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565f1ab695f0057a214a9b62"),
+	"local" : {
+		"email" : "emilycocoa@gmail.com",
+		"parent1email" : "elisamyu@gmail.com",
+		"parent2email" : "jasonzmo@gmail.com"
+	}
+}
+null
+{
+	"_id" : ObjectId("565e521b95f0057a214a9b56"),
+	"local" : {
+		"email" : "kaeschloss@rocketmail.com",
+		"parent1email" : "joschloss@yahoo.com",
+		"parent2email" : "lschloss@hotmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e384195f0057a214a9b49"),
+	"local" : {
+		"parent2email" : "Augustshaw@sbcglobal.net",
+		"parent1email" : "Dewi.s@sbcglobal.net",
+		"email" : "celineshaw5@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e37f895f0057a214a9b48"),
+	"local" : {
+		"email" : "alexandra@ting.org",
+		"parent1email" : "sherman@ting.org",
+		"parent2email" : "joyhu@sbcglobal.net"
+	}
+}
+{
+	"_id" : ObjectId("564ecacd9a96d49e566f40d3"),
+	"local" : {
+		"email" : "lisalisawangwang@gmail.com",
+		"parent1email" : "hsongwang@hotmail.com",
+		"parent2email" : "weizhi.wang@newport.com"
+	}
+}
+{
+	"_id" : ObjectId("5660cc13e143b9f1721be71b"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "weianthony@yahoo.com",
+		"email" : "bizzyizzy888@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e4f0b95f0057a214a9b54"),
+	"local" : {
+		"email" : "emiwong2@gmail.com",
+		"parent1email" : "hspwong@gmail.com",
+		"parent2email" : "cecimui@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565e2f8095f0057a214a9b40"),
+	"local" : {
+		"email" : "tywonder99@gmail.com",
+		"parent1email" : "gcwonder@yahoo.com",
+		"parent2email" : "jywonder@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565e361995f0057a214a9b46"),
+	"local" : {
+		"email" : "lenafye@gmail.com",
+		"parent1email" : "shirleyfeng@gmail.com",
+		"parent2email" : "mxcye@hotmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5645869c9832df8f35b323e1"),
+	"local" : {
+		"email" : "dianayun99@gmail.com",
+		"parent1email" : "yun888yang@hotmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e3f4f95f0057a214a9b4e"),
+	"local" : {
+		"email" : "sz24ph@gmail.com",
+		"parent1email" : "pjxzhang@yahoo.com",
+		"parent2email" : "shuanzhang@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e2ecc95f0057a214a9b3c"),
+	"local" : {
+		"email" : "ztephanie.zhang@gmail.com",
+		"parent1email" : "yingjiu.sun@gmail.com",
+		"parent2email" : "madbot@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e525b95f0057a214a9b57"),
+	"local" : {
+		"email" : "danamzhao@gmail.com",
+		"parent1email" : "lizhenli@yahoo.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("56610a94e143b9f1721be723"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "hongmin_lu@yahoo.com",
+		"email" : "karen.h.zhu@gmail.com"
+	}
+}
+null
+{
+	"_id" : ObjectId("56605f88ce09ec151519d2e5"),
+	"local" : {
+		"parent2email" : "grace_li@pacbell.net",
+		"parent1email" : "fbabian@gmail.com",
+		"email" : "aaron.babian@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("5660ceb3e143b9f1721be71c"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "stephaniebatties@sbcglobal.net",
+		"email" : "lucas.batties11@gmail.com"
+	}
+}
+null
+null
+{
+	"_id" : ObjectId("565e32de95f0057a214a9b44"),
+	"local" : {
+		"email" : "chenlawrencej@gmail.com",
+		"parent1email" : "xia_joan@yahoo.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565fb2c595f0057a214a9b64"),
+	"local" : {
+		"email" : "dchu0518@gmail.com",
+		"parent1email" : "weimei02@yahoo.com",
+		"parent2email" : "jackchu2002@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5654ab0e9a96d49e566f40ea"),
+	"local" : {
+		"email" : "toko.dougherty@gmail.com",
+		"parent1email" : "k.sato.dougherty@gmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("564ecc6c9a96d49e566f40d4"),
+	"local" : {
+		"email" : "elliott.eve17@gmail.com",
+		"parent1email" : "den32007@yahoo.com",
+		"parent2email" : ""
+	}
+}
+null
+{
+	"_id" : ObjectId("565e314895f0057a214a9b42"),
+	"local" : {
+		"email" : "adivganapathi@gmail.com",
+		"parent1email" : "kg.ganapathi@gmail.com",
+		"parent2email" : "nitaganapathi@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e4e8095f0057a214a9b53"),
+	"local" : {
+		"email" : "houdavid1999@gmail.com",
+		"parent1email" : "ffzhao2002@gmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("5660e9dbe143b9f1721be71e"),
+	"local" : {
+		"parent2email" : "john_z_hu@yahoo.com",
+		"parent1email" : "lilyhu1991@gmail.com",
+		"email" : "lucashu1998@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("564a42109832df8f35b32400"),
+	"local" : {
+		"parent2email" : "Ssqh1000@gmail.com",
+		"parent1email" : "sshuang6@gmail.com",
+		"email" : "myh1000@gmail.com"
+	}
+}
+null
+{
+	"_id" : ObjectId("564a98399832df8f35b32407"),
+	"local" : {
+		"email" : "katzir.asaf@gmail.com",
+		"parent1email" : "school@katzir.us",
+		"parent2email" : "katzir.asaf@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("564eab889a96d49e566f40d0"),
+	"local" : {
+		"email" : "joe1234lai@gmail.com",
+		"parent1email" : "dianelai8899@yahoo.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e30e395f0057a214a9b41"),
+	"local" : {
+		"email" : "heiden.lee.jeff@gmail.com",
+		"parent1email" : "Anit2eel@yahoo.com",
+		"parent2email" : "Heiden@stanford.edu "
+	}
+}
+{
+	"_id" : ObjectId("565e3da695f0057a214a9b4d"),
+	"local" : {
+		"email" : "holee4153@gmail.com",
+		"parent1email" : "yuseungeun@gmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565f719295f0057a214a9b63"),
+	"local" : {
+		"email" : "ysldude@gmail.com",
+		"parent1email" : "dys0321@gmail.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e8bce95f0057a214a9b60"),
+	"local" : {
+		"email" : "seanlin2000@gmail.com",
+		"parent1email" : "elin2000@yahoo.com",
+		"parent2email" : "james007lin@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565d45fb95f0057a214a9b3b"),
+	"local" : {
+		"email" : "kellenvliu@gmail.com",
+		"parent1email" : "mystery.friend2@gmail.com",
+		"parent2email" : "kgliu0101@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565bd74095f0057a214a9b37"),
+	"local" : {
+		"email" : "w.liu1998@gmail.com",
+		"parent1email" : "renss_2000@yahoo.com",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e2f2295f0057a214a9b3d"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "",
+		"email" : "lucha.dominik1432@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e46d195f0057a214a9b51"),
+	"local" : {
+		"email" : "samir.puranik@gmail.com",
+		"parent1email" : "spuranik@gmail.com",
+		"parent2email" : ""
+	}
+}
+null
+{
+	"_id" : ObjectId("5661052be143b9f1721be722"),
+	"local" : {
+		"parent2email" : "dan_razz@yahoo.com",
+		"parent1email" : "razz7@sbcglobal.com",
+		"email" : "borasmussen321@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5660b45ee143b9f1721be71a"),
+	"local" : {
+		"parent2email" : "",
+		"parent1email" : "",
+		"email" : "simon.rufer@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565e2f3b95f0057a214a9b3e"),
+	"local" : {
+		"email" : "abschloss@gmail.com",
+		"parent1email" : "joschloss@yahoo.com",
+		"parent2email" : "lawrence_schloss@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565c994b95f0057a214a9b39"),
+	"local" : {
+		"email" : "tjs.sears@gmail.com",
+		"parent1email" : "beth@timsears.com",
+		"parent2email" : "tim@timsears.com"
+	}
+}
+{
+	"_id" : ObjectId("565e4f6095f0057a214a9b55"),
+	"local" : {
+		"email" : "matnadroj@gmail.com",
+		"parent1email" : "stevecmtam@gmail.com",
+		"parent2email" : "jkimtam@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565e403395f0057a214a9b4f"),
+	"local" : {
+		"email" : "vidurthukral@gmail.com",
+		"parent1email" : "deepikathukral@hotmail.com",
+		"parent2email" : "vivekthukral@hotmail.com"
+	}
+}
+{
+	"_id" : ObjectId("5660f860e143b9f1721be71f"),
+	"local" : {
+		"parent2email" : "joyhu@sbcglobal.net",
+		"parent1email" : "sherman@ting.org",
+		"email" : "christopher@ting.org"
+	}
+}
+{
+	"_id" : ObjectId("565e7ded95f0057a214a9b5f"),
+	"local" : {
+		"email" : "e.w314476@gmail.com",
+		"parent1email" : "",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565e4ab395f0057a214a9b52"),
+	"local" : {
+		"email" : "leonard2378@gmail.com",
+		"parent1email" : "trliu@yahoo.com",
+		"parent2email" : "shuhhai@yahoo.com"
+	}
+}
+{
+	"_id" : ObjectId("565e71b095f0057a214a9b5e"),
+	"local" : {
+		"email" : "happyknight123@gmail.com",
+		"parent1email" : "leilin_hm@hotmail.com",
+		"parent2email" : "binwu@hotmail.com"
+	}
+}
+{
+	"_id" : ObjectId("565fedac95f0057a214a9b66"),
+	"local" : {
+		"email" : "jlraymond.wu@gmail.com",
+		"parent1email" : "",
+		"parent2email" : ""
+	}
+}
+{
+	"_id" : ObjectId("565299f89a96d49e566f40e1"),
+	"local" : {
+		"email" : "kevinxi100@gmail.com",
+		"parent1email" : "linzhang100@sbcglobal.net",
+		"parent2email" : "zhijianxi100@qq.com"
+	}
+}
+{
+	"_id" : ObjectId("565e2f7b95f0057a214a9b3f"),
+	"local" : {
+		"email" : "jonathan.z99@gmail.com",
+		"parent1email" : "jqz@yahoo.com",
+		"parent2email" : "maria.mao@gmail.com"
+	}
+}
+{
+	"_id" : ObjectId("56540e3c9a96d49e566f40e9"),
+	"local" : {
+		"email" : "beakydabird@gmail.com",
+		"parent1email" : "maria.mao@gmail.com",
+		"parent2email" : "jqz@yahoo.com"
+	}
+}
