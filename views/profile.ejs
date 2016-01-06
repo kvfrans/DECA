@@ -86,7 +86,24 @@
 							<p>
 								You have been succesfully signed up for Regionals!. <% if (user.local.regionalsRoommate1 && user.local.regionalsEventsFinalized) {%> Thank you for finalizing your registration<%} else {%> Please complete your registration steps below.<%}%>
 							</p>
-						<% if (user.local.regionalsForms == null){
+							<% if (user.local.registrationPayment == null){
+							%>
+							<p>
+								Please submit your $25 California DECA registration check made payable to Gunn High School. Checks will be due on January, 25th.
+							</p> 
+
+								<% } %>
+						<% if (user.local.registrationPayment == null){
+							%>
+							<p style="color:red;"><b>Registration Payment: Unsubmitted</b></p>
+							<%
+						}	else{
+							%>
+							<p style="color:green"><b>Registration Payment: Submitted</b></p>
+							<% 
+						}
+						
+						if (user.local.regionalsForms == null){
 							%>
 							<p style="color:red;"><b>Form Status: Unsubmitted</b></p>
 						<% } else {
