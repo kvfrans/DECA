@@ -4,6 +4,7 @@ module.exports = function(app, passport) {
 
 	var mongoose = require('mongoose')
 	var sendgrid  = require('sendgrid')("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");
+	var fs = require("fs");
 
 	// =====================================
 	// HOME PAGE (with login links) ========
@@ -64,7 +65,12 @@ module.exports = function(app, passport) {
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.ejs', {
-			user : req.user // get the user out of session and pass to template
+			user : req.user, // get the user out of session and pass to template
+			files : [fs.readdirSync("public/Practice Tests/b"),
+							fs.readdirSync("public/Practice Tests/f"),
+							fs.readdirSync("public/Practice Tests/h"),
+							fs.readdirSync("public/Practice Tests/m"),
+							fs.readdirSync("public/Practice Tests/p")]
 		});
 	});
 
