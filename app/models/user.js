@@ -28,7 +28,8 @@ var userSchema = mongoose.Schema({
         writtenPartner2: String,
         regionalsEventsFinalized: Number,
         roleplayPartner: String,
-        registrationPayment: String
+        registrationPayment: String,
+        statesRegistered: Number,
     }
 });
 

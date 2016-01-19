@@ -146,8 +146,12 @@ module.exports = function(app, passport) {
 	{
 		if (req.body.submitbutton == 'save'){
 			req.user.local.regionalsWritten = req.body.regionalsWritten;
+			req.user.local.writtenPartner1 = req.body.writtenPartner1;
+			req.user.local.writtenPartner2 = req.body.writtenPartner2;
 			req.user.local.regionalsRoleplay = req.body.regionalsRoleplay;
+			req.user.local.roleplayPartner = req.body.roleplayPartner;
 			req.user.local.regionalsTShirt = req.body.regionalsTShirt;
+			req.user.local.statesRegistered = 1;
 			req.user.save(function (err, member) {
 				if (err) return console.error(err);
 				console.log("saved");
@@ -156,8 +160,12 @@ module.exports = function(app, passport) {
 		}
 		else {
 			req.user.local.regionalsWritten = null;
+			req.user.local.writtenPartner1 = null;
+			req.user.local.writtenPartner2 = null;
 			req.user.local.regionalsRoleplay = null;
+			req.user.local.roleplayPartner = null;
 			req.user.local.regionalsTShirt = null;
+			req.user.local.statesRegistered = 0;
 			req.user.save(function (err, member){
 				if (err) return console.error(err);
 				console.log("saved");

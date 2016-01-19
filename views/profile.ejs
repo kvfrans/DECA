@@ -58,141 +58,23 @@
 			<div class="col-sm-6">
 				<div class="well">
 					<h3><span class="fa fa-user"></span>Updates!</h3>
-
-					<% if (user.local.email == "gunndeca") { %>
-						hey deca admin
-						<a href="/panel"> admin panel </a>
-					<% }
-					else
-					{%>
 						Welcome to DECA<br><br>
+						Registration for STATES is now open!<br><br>
 
-
-
-						<% if ((user.local.regionalsChecks == null) && (user.local.regionalsForms == null))
-						{
-							%>
-							<h5><strong>SVCDC - Silicon Valley Career Development Conference Registration</strong></h5>
-							<p>
-							 Regionals Registration has closed. Please come again for states! <br>
-							 If you believe this is a mistake, please contact either Jonathan or Lucas <strong>immediately</strong> or send an email to contact@gunndeca.org. </P>
-						<%}
-						else {
-							%>
-							<p>
-								You have been succesfully signed up for Regionals!. <% if (user.local.regionalsRoommate1 && user.local.regionalsEventsFinalized) {%> Thank you for finalizing your registration<%} else {%> Please complete your registration steps below.<%}%>
-							</p>
-							<% if (user.local.registrationPayment == null){
-							%>
-							<p>
-								Please submit your $25 California DECA registration check made payable to Gunn High School. Checks will be due on January, 25th.
-							</p>
-
-								<% } %>
-						<% if (user.local.registrationPayment == null){
-							%>
-							<p style="color:red;"><b>Registration Payment: Unsubmitted</b></p>
-							<%
-						}	else{
-							%>
-							<p style="color:green"><b>Registration Payment: Submitted</b></p>
-							<%
-						}
-
-						if (user.local.regionalsForms == null){
-							%>
-							<p style="color:red;"><b>Form Status: Unsubmitted</b></p>
-						<% } else {
-							%>
-							<p style="color:green"><b>Form Status: Submitted</b></p>
-							<%
-						}
-						 if (user.local.regionalsChecks == null){
-							%>
-							<p style="color:red;"><b>Check Status: Unsubmitted</b></p>
-						<% } else {
-							%>
-							<p style="color:green"><b>Check Status: Submitted</b></p>
-							<%
-						}
-
-
-						 if (user.local.regionalsRoommate1 == null){
-							%>
-							<p style="color:red;"><b>Roommate Selection: Incomplete</b></p>
-						<% } else {
-							%>
-							<p style="color:green"><b>Roommate Selection: Complete</b></p>
-							<%
-						}
-						 if (user.local.regionalsEventsFinalized == null){
-							%>
-							<p style="color:red;"><b>Event Finalization: Unsubmitted</b></p>
-						<% } else {
-							%>
-							<p style="color:green"><b>Event Finalization: Submitted</b></p>
-							<%
-						}%>
-
-
-					<% }} %>
-
+						<% if(user.local.statesRegistered == 1){%>
+								You are registered for states.
+						<%}%>
 				</div>
 
-
-				<% if (user.local.regionalsChecks != null && user.local.regionalsChecks != null)
-				{
-				%>
-					<div class="well">
-
-						<h3><span class="fa fa-user"></span><% if (user.local.regionalsRoommate1 == null){ %>Choose<% } %> Roommates</h3>
-						<% if (user.local.regionalsRoommate1 == null) {%>
-						<p>Please choose at least one Regional attendee that you would like to room with. You will be unable to change your selection after submitting.</p>
-						<% } %>
-						<form action="/regionalsRoommate" method="post">
-							<div class="form-group">
-								<label>Roommate 1</label>
-								<input type="text" class="form-control" name="regionalsRoommate1" value="<%= (user.local.regionalsRoommate1 != null ? user.local.regionalsRoommate1 : "") %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
-							</div>
-							<div class="form-group">
-								<label>Roommate 2</label>
-								<input type="text" class="form-control" name="regionalsRoommate2" value="<%= (user.local.regionalsRoommate2 != null ? user.local.regionalsRoommate2 : "") %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
-							</div>
-							<div class="form-group">
-								<label>Roommate 3</label>
-								<input type="text" class="form-control" name="regionalsRoommate3" value="<%= (user.local.regionalsRoommate3 != null ? user.local.regionalsRoommate3 : "") %>" <% if(user.local.regionalsRoommate1) {%> readonly <%}%> >
-							</div>
-							<% if(user.local.regionalsRoommate1 ==  null) { %>
-							<button type="submit" class="btn-submit btn btn-warning btn-lg">Submit</button>
-
-							<%}%>
-						</form>
-					</div>
-				<% } %>
-
-
-					<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
-					<div class="well">
-					<h3><span class="fa fa-user"></span>
-
-
-							Finalize Events
-
-
-					</h3>
-					<p>Please finalize your events and partners. Be sure that all members in your team have accurate event and partner information listed before submitting</p>
-					<p><strong>YOU WILL NOT BE ABLE TO CHANGE AFTER FINALIZING</strong></p>
-
-						<% if (user.local.regionalsEventsFinalized){%>
-						<form>
-						<%}else {%>
-						<form action="/setRegionalsFinal" method="post">
-						<%}%>
-						<div class="form-group">
-							<label>Roleplay</label>
-							<% if (user.local.regionalsEventsFinalized) {%>
-							<input type="text" class="form-control" name="regionalsWritten" readonly value="<%= user.local.regionalsRoleplay %>" >
-							<%} else {%>
+				<div class="well">
+				<h3><span class="fa fa-user"></span>
+						Register for States
+				</h3>
+				<!-- <p>Choose events to participate in</p> -->
+				<!-- <p><strong>You can change this later</strong></p> -->
+				<form action="/setRegionals" method="post">
+					<div class="form-group">
+						<label>Roleplay</label>
 							<select name="regionalsRoleplay" class="form-control" id="grade" selected=<%= user.local.regionalsRoleplay %>>
 								<%
 									var options = [
@@ -225,22 +107,15 @@
 									]
 									for(var i = 0; i < options.length; i++) { %>
 										<option <% if (user.local.regionalsRoleplay == options[i]) { %>selected<% } %> >  <%= options[i] %>  </option>
-									<% }
-								%>
+									<% } %>
 							</select>
-							<%}%>
 
-							<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
-								<label>Roleplay Partner</label>
-								<input type="text" class="form-control" name="roleplayPartner"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.roleplayPartner %>" <%}%> >
-							<%}%>
+							<label>Roleplay Partner</label>
+							<input type="text" class="form-control" name="roleplayPartner" value="<%= user.local.roleplayPartner %>">
 
 						</div>
 						<div class="form-group">
 							<label>Written</label>
-							<% if (user.local.regionalsEventsFinalized) {%>
-							<input type="text" class="form-control" name="regionalsWritten" readonly value="<%= user.local.regionalsWritten %>" >
-							<%} else {%>
 							<select name="regionalsWritten" class="form-control" id="grade" selected=<%= user.local.regionalsWritten %>>
 								<%
 									var options = [
@@ -268,48 +143,46 @@
 									<% }
 								%>
 							</select>
-							<%}%>
 
-							<% if (user.local.regionalsChecks && user.local.regionalsForms){%>
 								<label>Written Partner 1</label>
-								<input type="text" class="form-control" name="writtenPartner1"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.writtenPartner1 %>" <%}%> >
+								<input type="text" class="form-control" name="writtenPartner1"  value="<%= user.local.writtenPartner1 %>" >
 								<label>Written Partner 2</label>
-								<input type="text" class="form-control" name="writtenPartner2"  <% if(user.local.regionalsEventsFinalized) {%> readonly value="<%= user.local.writtenPartner2 %>" <%}%> >
-							<%}%>
+								<input type="text" class="form-control" name="writtenPartner2"  value="<%= user.local.writtenPartner2 %>" >
 						</div>
 
-						<% if (user.local.regionalsChecks && user.local.regionalsForms && (user.local.regionalsEventsFinalized == null)) {%>
-
-
-							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save">Finalize</button>
-
-
-						<% }else if (user.local.regionalsEventsFinalized) {}%>
-
-
-
-
-<!-- 							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save"><% if ((user.local.regionalsRoleplay == null || user.local.regionalsRoleplay == "NONE SELECTED") && (user.local.regionalsWritten == null || user.local.regionalsWritten == "NONE SELECTED"))
-							{
-								%>Register for Regionals
-								<% } else { %>
-								Update
-								<% } %>
-							</button>
-						<% if (((user.local.regionalsRoleplay != null && user.local.regionalsRoleplay != "NONE SELECTED") || (user.local.regionalsWritten != null && user.local.regionalsWritten != "NONE SELECTED"))) //if user has signed up for regionals
-							{
-								%>
-
-							<button type="submit" class="btn-submit btn btn-lg" name="submitbutton" value="cancel">Cancel Registration</button>
-	 						<% } %> -->
-
-
-
-
+						<% if(user.local.statesRegistered == 1){%>
+							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save">Update</button>
+							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="cancel">Cancel</button>
+							<%} else { %>
+							<button type="submit" class="btn-submit btn btn-warning btn-lg" name="submitbutton" value="save">Register</button>
+							<%}%>
 					</form>
 				</div>
 
-				<%}%>
+
+
+
+				<div class="well">
+					<h3><span class="fa fa-user"></span> Roommates</h3>
+					<p>Please choose at least one States attendee that you would like to room with.</p>
+					<form action="/regionalsRoommate" method="post">
+						<div class="form-group">
+							<label>Roommate 1</label>
+							<input type="text" class="form-control" name="regionalsRoommate1" value="<%= (user.local.regionalsRoommate1 != null ? user.local.regionalsRoommate1 : "") %>"  >
+						</div>
+						<div class="form-group">
+							<label>Roommate 2</label>
+							<input type="text" class="form-control" name="regionalsRoommate2" value="<%= (user.local.regionalsRoommate2 != null ? user.local.regionalsRoommate2 : "") %>"  >
+						</div>
+						<div class="form-group">
+							<label>Roommate 3</label>
+							<input type="text" class="form-control" name="regionalsRoommate3" value="<%= (user.local.regionalsRoommate13!= null ? user.local.regionalsRoommate3 : "") %>"  >
+						</div>
+						<button type="submit" class="btn-submit btn btn-warning btn-lg">Submit</button>
+					</form>
+				</div>
+
+
 			</div>
 
 
@@ -320,16 +193,20 @@
 			<div class="well">
 				<h3><span class="fa fa-user"></span> Materials</h3>
 
+				<label> Cluster Readings </label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-					<option value="#">Cluster Readings</option>
+					<option value="#">Select Reading</option>
 					<option value="BusinessAdministrationClusterReading.pdf">Buisness Administration</option>
 					<option value="FinanceClusterReading.pdf">Finance</option>
 					<option value="HospitalityandTourismClusterReading.pdf">Hospitality and Tourism</option>
 					<option value="MarketingClusterReading.pdf">Marketing</option>
 				</select>
 
+				<br>
+
+				<label>Buisness Management</label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-			    <option value="#">Buisness Management</option>
+			    <option value="#">Select Test</option>
 				<% for(var cx = 0; cx < files[0].length; cx++)
 				{
 					var current = files[0][cx];
@@ -338,8 +215,11 @@
 				<% } %>
 				</select>
 
+				<br>
+
+				<label>Finance</label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-			    <option value="#">Finance</option>
+			    <option value="#">Select Test</option>
 				<% for(var cx = 0; cx < files[1].length; cx++)
 				{
 					var current = files[1][cx];
@@ -348,8 +228,11 @@
 				<% } %>
 				</select>
 
+				<br>
+
+				<label>Hospitality</label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-			    <option value="#">Hospitality</option>
+			    <option value="#">Select Test</option>
 				<% for(var cx = 0; cx < files[2].length; cx++)
 				{
 					var current = files[2][cx];
@@ -358,8 +241,12 @@
 				<% } %>
 				</select>
 
+				<br>
+
+
+				<label>Marketing</label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-			    <option value="#">Marketing</option>
+			    <option value="#">Select Test</option>
 				<% for(var cx = 0; cx < files[3].length; cx++)
 				{
 					var current = files[3][cx];
@@ -368,8 +255,12 @@
 				<% } %>
 				</select>
 
+				<br>
+
+
+				<label>PBA</label>
 				<select onChange="window.location.href=this.value"  class="form-control" >
-			    <option value="#">PBA</option>
+			    <option value="#">Select Test</option>
 				<% for(var cx = 0; cx < files[4].length; cx++)
 				{
 					var current = files[4][cx];
