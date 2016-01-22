@@ -1,14 +1,22 @@
-db = db.getSiblingDB('deca')
-var regis = db.users.find({"local.statesRegistered": 1});//var email = ["jonathan.z99@gmail.com"];
+// var mongoose = require('mongoose')
+var sendgrid  = require('sendgrid')("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");
+
+
+// db = db.getSiblingDB('deca')
+var regis = [
+"kevinfrans2@gmail.com"
+,
+"same"
+];
 // print(regis);
 
 
-while (regis.hasNext()) {
-    current =  regis.next();
-    print(current.local.email);
+for (var i = 0; i < regis.length; i++) {
+    current =  regis[i];
+    // print(current);
 
     sendgrid.send({
-		  to:       current.local.email,
+		  to:       current,
 		  from:     'kevin@gunndeca.org',
 		  subject:  'States Forms',
 		  text:
