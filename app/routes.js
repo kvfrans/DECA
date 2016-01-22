@@ -70,7 +70,8 @@ module.exports = function(app, passport) {
 							fs.readdirSync("public/Practice Tests/f"),
 							fs.readdirSync("public/Practice Tests/h"),
 							fs.readdirSync("public/Practice Tests/m"),
-							fs.readdirSync("public/Practice Tests/p")]
+							fs.readdirSync("public/Practice Tests/p"),
+							fs.readdirSync("public/statesforms")]
 		});
 	});
 
