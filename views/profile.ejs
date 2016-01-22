@@ -59,7 +59,15 @@
 				<div class="well">
 					<h3><span class="fa fa-user"></span>Updates!</h3>
 						Welcome to DECA<br><br>
-						Registration for the States Career Development Conference (SCDC) is now open!<br><br>
+
+						<h4>Gunn DECA Speaker Series | February 2 | 4:00PM Room K-8</h4>
+
+						Gunn's second speaker series features Amy Pressman and Borge Hald, founders of Medallia a customer service startup business valued at over 1.25 billion dollars. Medallia's clients include several Fortune 500 companies such as PayPal, Mercedes Benz and Nordstrom.  If you are interested in entrepreneurship and business growth, make sure to stop by and listen to these speakers! (Refreshments will also be available)
+						<br><br>
+
+						<h4>SCDC: March 3-6 | San Diego | $400</h4>
+
+						Registration for the States Career Development Conference (SCDC) is now open! Please review and finalize the selections for your competition events and roommates. The required forms will become available after submitting your registration. <br><br>
 
 						<% if (user.local.registrationPayment == null){
 							%>
@@ -106,6 +114,23 @@
 						}
 						%>
 				</div>
+				<% if (user.local.statesRegistered != null){ %>
+				<div class="well">
+					<h3><span class="fa fa-user"></span>States Forms</h3>
+					<p>Please print, complete and submit all THREE forms to an officer or Mr. Collier's Box. Your registration will be incomplete until all forms are submitted.</p>	
+					<label>Forms</label>
+					<select onChange="window.location.href=this.value" class="form-control">
+							<% for(var i = 0; i < files[5].length;i++){
+								var cform = files[5][i];
+								%>
+								<option value="statesforms/<%= cform %>"> <%= cform %></option>
+							<%	
+							}
+							%>
+					</select>
+				</div>
+				<% } %>
+
 
 				<div class="well">
 				<h3><span class="fa fa-user"></span>
@@ -200,10 +225,6 @@
 					</form>
 				</div>
 
-				<div class="well">
-				
-
-				</div>
 
 
 
