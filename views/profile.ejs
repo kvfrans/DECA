@@ -61,9 +61,50 @@
 						Welcome to DECA<br><br>
 						Registration for STATES is now open!<br><br>
 
-						<% if(user.local.statesRegistered == 1){%>
-								You are registered for states.
-						<%}%>
+						<% if (user.local.registrationPayment == null){
+							%>
+							<p style="color:red;"><b>Registration Payment: Unsubmitted</b></p>
+							<%
+						}	else{
+							%>
+							<p style="color:green"><b>Registration Payment: Submitted</b></p>
+							<%
+						}
+						%>
+
+
+						<% if (user.local.statesRegistered == null){
+							%>
+							<p style="color:red;"><b>States Registration: Unsubmitted</b></p>
+							<%
+						}	else{
+							%>
+							<p style="color:green"><b>States Registration: Submitted</b></p>
+							<%
+						}
+						%>
+
+						<% if (user.local.statesChecks == null){
+							%>
+							<p style="color:red;"><b>States Checks: Unsubmitted</b></p>
+							<%
+						}	else{
+							%>
+							<p style="color:green"><b>States Checks: Submitted</b></p>
+							<%
+						}
+						%>
+
+						<% if (user.local.statesForms == null){
+							%>
+							<p style="color:red;"><b>States Forms: Unsubmitted</b></p>
+							<%
+						}	else{
+							%>
+							<p style="color:green"><b>States Forms: Submitted</b></p>
+							<%
+						}
+						%>
 				</div>
 
 				<div class="well">

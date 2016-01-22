@@ -30,6 +30,8 @@ var userSchema = mongoose.Schema({
         roleplayPartner: String,
         registrationPayment: String,
         statesRegistered: Number,
+        statesForms: String,
+        statesChecks: String,
     }
 });
 
